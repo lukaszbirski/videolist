@@ -1,7 +1,5 @@
 package com.example.videos;
 
-import java.util.LinkedList;
-import java.util.List;
 
 public class Video {
     private String name;
