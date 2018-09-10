@@ -2,19 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Video list</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        .text-align{
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
+
 </head>
 <body>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div id="container">
+            <div id="raw">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Add<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/show">List of videos</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-    <form action="/add" method="get">
-            <label>Podaj nazwę video</label>
-            <input name="name" type="text" required>
-            <label>Podaj adres url z youtube:</label>
-            <input name="url" type="text" required>
-        <button type="submit">Submit</button>
-    </form>
+    <section id="add-video">
+        <header>
+            <h1 class="text-align">You can add video here</h1>
+        </header>
+        <div class="container">
+            <div id="raw">
+                <div class="col-xs-6 col-xs-offset-3">
+                    <form action="/add" method="get">
+                        <div class="col-xs-6">
+                            <div class="form-group">
+                                <label for="name">Add name of the video</label>
+                                <input id="name" name="name" type="text" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="url">Add url address from youtube:</label>
+                                <input id="url" name="url" type="text" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
 
+    </section>
+
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
