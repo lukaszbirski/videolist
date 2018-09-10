@@ -11,11 +11,6 @@ public class HomeController {
     VideoDao videoDao = new VideoDao();
 
     @GetMapping("/")
-    public String hello(){
-        return "hello";
-    }
-
-    @GetMapping("/video")
     public String video(){
         return "video";
     }
