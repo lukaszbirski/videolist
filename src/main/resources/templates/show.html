@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <title>Video list</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        .text-align{
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div id="container">
-            <div id="raw">
+        <div class="container">
+            <div class="raw">
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item active">
@@ -24,22 +30,39 @@
         </div>
     </nav>
 
-    <section id="video-list">
-        <div id="container">
-            <div id="raw">
-                <div class="form-group">
-                    <header>
+    <main role="main" class="container">
+        <div class="raw">
+            <div class="form-group">
+                <div class="text-center mb-4">
+                    <ul th:each="video: ${videoDao}" style="list-style-type:none">
                         <h1>
-                            <ul th:each="video: ${videoDao}" style="list-style-type:none">
-                                <li th:text="${video.name}"></li>
-                                <iframe width="560" height="315" th:src="${video.getUrl()}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                            </ul>
+                            <li th:text="${video.name}"></li>
                         </h1>
-                    </header>
+                        <iframe  width="560" height="315" th:src="${video.getUrl()}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
+
+    <!--<section id="video-list">-->
+        <!--<div id="container">-->
+            <!--<div id="raw">-->
+                <!--<div class="col-xs-6 col-xs-offset-2">-->
+                    <!--<div class="col-xs-12">-->
+                        <!--&lt;!&ndash;<div class="form-group">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<h1>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<ul th:each="video: ${videoDao}" style="list-style-type:none">&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<li th:text="${video.name}"></li>&ndash;&gt;-->
+                                    <!--&lt;!&ndash;<iframe width="560" height="315" th:src="${video.getUrl()}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>&ndash;&gt;-->
+                                <!--&lt;!&ndash;</ul>&ndash;&gt;-->
+                            <!--&lt;!&ndash;</h1>&ndash;&gt;-->
+                        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</section>-->
 
 
 
