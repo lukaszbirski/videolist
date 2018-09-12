@@ -24,11 +24,24 @@
         </div>
     </nav>
 
-    <ul th:each="video: ${videoDao}">
-        <li th:text="${video.name}"></li>
-        <iframe width="560" height="315" th:src="${video.getUrl()}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </ul>
-    <h1><a href="/">Dodaj kolejne video</a></h1>
+    <section id="video-list">
+        <div id="container">
+            <div id="raw">
+                <div class="form-group">
+                    <header>
+                        <h1>
+                            <ul th:each="video: ${videoDao}" style="list-style-type:none">
+                                <li th:text="${video.name}"></li>
+                                <iframe width="560" height="315" th:src="${video.getUrl()}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                            </ul>
+                        </h1>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <script
             src="https://code.jquery.com/jquery-3.3.1.min.js"
