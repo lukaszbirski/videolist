@@ -25,12 +25,13 @@ public class HomeController {
 
         modelMap.put("video", video);
         videoDao.addVideo(video);
+        videoDao.setListIsEmpty(true);
         return "redirect:/show";
     }
 
     @GetMapping("/show")
     public String showall(ModelMap map){
-        map.put("videoDao",videoDao.findAllVideo());
+        map.put("videoDao",videoDao);
         return "show";
     }
 }

@@ -34,12 +34,15 @@
         <div class="raw">
             <div class="form-group">
                 <div class="text-center mb-4">
-                    <ul th:each="video: ${videoDao}" style="list-style-type:none">
+                    <span th:if="${!videoDao.isListIsEmpty()}" class="task-unfinished far"><h1>There is no videos</h1></span>
+                    <span th:if="${videoDao.isListIsEmpty()}" class="task-finished far">
+                        <ul th:each="video: ${videoDao.findAllVideo()}" style="list-style-type:none">
                         <h1>
                             <li th:text="${video.name}"></li>
                         </h1>
                         <iframe  width="560" height="315" th:src="${video.getUrl()}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </ul>
+                        </ul>
+                    </span>
                 </div>
             </div>
         </div>

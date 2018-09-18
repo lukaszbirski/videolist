@@ -6,6 +6,7 @@ import java.util.List;
 public class VideoDao {
 
     private static List<Video> videoList = new LinkedList<>();
+    private boolean listIsEmpty;
 
     public VideoDao() {
     }
@@ -26,5 +27,11 @@ public class VideoDao {
         return videoList;
     }
 
+    public boolean isListIsEmpty() {
+        return listIsEmpty;
+    }
 
+    public void setListIsEmpty(boolean listIsEmpty) {
+        this.listIsEmpty = listIsEmpty;
+    }
 }
